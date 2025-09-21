@@ -24,12 +24,12 @@ WARNINGS
 
 <!-- Replace `ferrancipres/html-css-template` with your new repo -->
 
-![issues](https://img.shields.io/github/issues/ferrancipres/basekit)
-![pull requests](https://img.shields.io/github/issues-pr/ferrancipres/basekit)
-![last commit](https://img.shields.io/github/last-commit/ferrancipres/basekit)
-![repo size](https://img.shields.io/github/repo-size/ferrancipres/basekit)
-![code size](https://img.shields.io/github/languages/code-size/ferrancipres/basekit)
-![top language](https://img.shields.io/github/languages/top/ferrancipres/basekit)
+![issues](https://img.shields.io/github/issues/ferrancipres/basekit-js)
+![pull requests](https://img.shields.io/github/issues-pr/ferrancipres/basekit-js)
+![last commit](https://img.shields.io/github/last-commit/ferrancipres/basekit-js)
+![repo size](https://img.shields.io/github/repo-size/ferrancipres/basekit-js)
+![code size](https://img.shields.io/github/languages/code-size/ferrancipres/basekit-js)
+![top language](https://img.shields.io/github/languages/top/ferrancipres/basekit-js)
 
 ---
 

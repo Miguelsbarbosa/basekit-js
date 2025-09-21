@@ -1,0 +1,95 @@
+<!-- ======================================================================
+PLANTILLA HTML — ALERTAS OPERATIVAS (v2025-09-19)
+Ámbito: SOLO HTML. Lista de problemas y cambios frecuentes para vigilar.
+----------------------------------------------------------------------
+
+META / SEO
+- <title> único (≤60).
+- <meta name="description" content="…"> único (≤160).
+- <link rel="canonical" href="https://dominio.com/ruta/"> absoluto, https, sin UTM, 1 por página.
+- Staging: <meta name="robots" content="noindex,nofollow"> y quitar en prod.
+- Evitar http-equiv obsoletos (X-UA-Compatible).
+- Si cambia dominio/ruta, actualizar canonical y sitemap.
+
+FUENTES (OPCIONAL — mantener comentado si no se usan)
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+WARNING
+- Descomentar SOLO si aplicas esa familia en CSS; si no, descargas inútiles.
+- Máx 2–3 preconnect en total. Mantén crossorigin en gstatic.
+- Mantén display=swap para evitar FOIT.
+- No uses @import en CSS para Google Fonts (más lento).
+- Si autoalojas, elimina el bloque y usa preload + @font-face.
+- Si cambias de familia, cambia también --ff-sans en CSS y la URL aquí.
+
+ADVERTENCIA
+- <script type="module"> en <head> es válido (defer implícito). Evita <script> clásico que bloquea.
+- modulepreload: solo si medido mejora.
+
+CHANGELOG
+- 2025-09-19: versión inicial.
+====================================================================== -->
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Metadatos mínimos -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Title</title>
+    <meta name="description" content="Descripción breve de la página (≤160 caracteres)." />
+
+    <!-- Icono -->
+    <!-- <link rel="icon" href="/favicon.ico" /> -->
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="/styles.css" />
+
+    <!-- JS moderno -->
+    <script type="module" src="/main.js"></script>
+
+    <!-- Fuentes (opcional)
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    /> -->
+  </head>
+  <body>
+    <header>
+      <div class="logo">logo</div>
+      <nav>
+        <ul>
+          <li><a href="#sec-1">Sección 1</a></li>
+          ...
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <h1>Testing configuration web</h1>
+
+      <section id="section">
+        <h2 id="section-title">Section Title</h2>
+        <button id="btn" type="button">Clickeame</button>
+        <p>Contenido…</p>
+        <!-- Ejemplo LCP: imagen con dimensiones para evitar CLS -->
+        <!-- <img src="/hero.jpg" alt="Descripción" width="1200" height="630" loading="eager" decoding="async" fetchpriority="high"> -->
+      </section>
+
+      <section id="section">
+        <h2 id="section-title">Section Title</h2>
+        <p>Contenido…</p>
+        <!-- <aside aria-label="Contenido complementario">...</aside> -->
+      </section>
+    </main>
+
+    <footer>
+      <p>Contenido…</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,189 @@
+/* ======================================================================
+BASE GLOBAL — NOTAS RÁPIDAS (v2025-09-19)
+Uso: importa este CSS antes de tus componentes/utilidades. No combines con otro reset.
+----------------------------------------------------------------------
+
+ALERTAS
+- Fuentes: stack del sistema → si activas Google Fonts, cambia --ff-sans y añade <link>.
+- Imágenes: img { display:block }. Si la quieres inline, usa .img-inline { display:inline; vertical-align:middle; }.
+- Formularios: heredan font/color. Ojo: algunas UI libs los sobrescriben.
+- Enlaces: a { text-decoration:none }. Define estilo de <a> en tu base.
+- Foco: :focus-visible activo. No lo elimines sin alternativa visible.
+- Anchors: :target = 5ex. Si hay header fijo alto, súbelo (p.ej., 9ex).
+- [hidden]: fuerza display:none y respeta hidden="until-found". No mezclar con visibility/opacity.
+- Motion reducida: acorta animaciones y desactiva parallax/spin/flash; crea excepciones si son críticas.
+
+ADVERTENCIA (solo si vas a instalar)
+- Tailwind: si usas Preflight, evita doble reset o intégralo en @layer base.
+- React/Next: si usas Portals fuera de #root, revisa z-index de modales.
+- UI libraries: pueden imponer tipografía/inputs; revisa el orden de importación.
+
+RENDIMIENTO
+- No cargues preconnect/preload de fuentes si no activas Google Fonts.
+- Mantén width/height en imágenes críticas para evitar CLS.
+
+CHANGELOG
+- 2025-09-19: versión inicial.
+====================================================================== */
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+/* Texto */
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  line-height: 1.25;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* Medios */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+img,
+video {
+  height: auto;
+}
+
+/* Formularios */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* Enlaces */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Accesibilidad foco */
+:focus-visible {
+  outline: 2px solid Highlight;
+  outline-offset: 2px;
+}
+
+/* Ocultación fiable */
+[hidden]:not([hidden="until-found"]) {
+  display: none !important;
+}
+
+/* Anclas con cabeceras fijas */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* Aísla root en apps SPA */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* Respeta usuarios con motion reducida */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  * {
+    transition-duration: 0.12s !important; /* micro-transiciones */
+    animation-duration: 0.12s !important; /* acorta animaciones */
+    animation-iteration-count: 1 !important; /* sin bucles */
+  }
+  [data-parallax],
+  .parallax,
+  [data-anim*="spin"],
+  .animate-spin,
+  [data-anim*="flash"],
+  .animate-flash {
+    animation: none !important;
+    transform: none !important; /* elimina parallax y giros */
+  }
+}
+
+/* Base tipográfica */
+:root {
+  --ff-sans:
+    system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Liberation Sans", sans-serif;
+  --ff-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --lh: 1.5;
+}
+
+/* === Base global === */
+body {
+  font-family: var(--ff-sans);
+  line-height: var(--lh);
+}
+
+/* Código en monoespaciada */
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--ff-mono);
+}
+
+/* Control semántico */
+strong,
+b {
+  font-weight: var(--fw-bold);
+} /* siempre 700 */
+em,
+i {
+  font-style: italic;
+}
+
+/* Jerarquía de títulos */
+h1 {
+  font-weight: var(--fw-bold);
+}
+h2 {
+  font-weight: var(--fw-semibold);
+}
+h3 {
+  font-weight: var(--fw-medium);
+}
+h4,
+h5,
+h6 {
+  font-weight: var(--fw-regular);
+}

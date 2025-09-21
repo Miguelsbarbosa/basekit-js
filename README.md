@@ -18,6 +18,34 @@ WARNINGS
   <img src="https://img.shields.io/badge/README-.md-blue?style=flat&labelColor=2f2f2f&logo=markdown&logoColor=white" alt="README badge" width="170">
 </p>
 
+---
+
+### 📊 Repository Badges
+
+<!-- Replace `ferrancipres/html-css-template` with your new repo -->
+
+![issues](https://img.shields.io/github/issues/ferrancipres/basekit)
+![pull requests](https://img.shields.io/github/issues-pr/ferrancipres/basekit)
+![last commit](https://img.shields.io/github/last-commit/ferrancipres/basekit)
+![repo size](https://img.shields.io/github/repo-size/ferrancipres/basekit)
+![code size](https://img.shields.io/github/languages/code-size/ferrancipres/basekit)
+![top language](https://img.shields.io/github/languages/top/ferrancipres/basekit)
+
+---
+
+#### 📌 Quick Access
+
+- [README.md](README.md)
+- [LICENSE](LICENSE)
+- [config/.gitignore](config/.gitignore)
+- [config/.prettierrc.json](config/.prettierrc.json)
+- [config/.prettierignore](config/.prettierignore)
+- [config/.gitattributes](config/.gitattributes)
+- [config/.editorconfig](config/.editorconfig)
+- [src/](src/)
+
+---
+
 📋 Table of Contents
 
 1. [Description](#description)
